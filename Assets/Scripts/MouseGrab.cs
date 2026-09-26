@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +12,7 @@ public class MouseGrab : MonoBehaviour
 
     void Update()
     {
-        if (isBeingDragged && currentDragger != null)
+        if(isBeingDragged && currentDragger != null)
         {
             Vector3 draggerPos = currentDragger.position;
             transform.parent.position = new Vector3(draggerPos.x + grabOffset.x, draggerPos.y + grabOffset.y, transform.parent.position.z);
@@ -20,12 +21,15 @@ public class MouseGrab : MonoBehaviour
 
     public void StartDragging(Transform draggerTransform)
     {
-        if (!isBeingDragged)
+        if(!isBeingDragged)
         {
             isBeingDragged = true;
             currentDragger = draggerTransform;
             grabOffset = (Vector3)transform.parent.position - (Vector3)draggerTransform.position;
-            grabOffset.z = 0;
+            grabOffset.z = 0; 
+            
+            // FIX 1: Automatically call your front logic when the drag starts
+            toFront();
         }
     }
 
@@ -41,20 +45,47 @@ public class MouseGrab : MonoBehaviour
     public void toFront()
     {
         Transform rootWindow = transform.parent != null ? transform.parent : transform;
-        SpriteRenderer[] renderers = rootWindow.GetComponentsInChildren<SpriteRenderer>();
         GameObject currWindow = rootWindow.gameObject;
 
-        if (currWindow != null && currWindow != currentHighestWindow && renderers.Length > 0)
+        if (currWindow != null && currWindow != currentHighestWindow)
         {
-            // FIX 2: Give the entire window a fresh base block of sorting order layers.
-            // Spacing them out by 10 ensures child elements keep their relative depths
+            // Give the entire window group a fresh base block of sorting layers
             currentHighestOrder += 10;
 
+            // 1. Update all standard Sprite Renderers
+            SpriteRenderer[] renderers = rootWindow.GetComponentsInChildren<SpriteRenderer>();
             foreach (SpriteRenderer renderer in renderers)
             {
-                // Re-calculates internal layered spacing (e.g. text stays on top of panels)
-                renderer.sortingOrder = currentHighestOrder + (renderer.sortingOrder % 10);
+                if (renderer != null)
+                {
+                    renderer.sortingOrder = currentHighestOrder + (renderer.sortingOrder % 10);
+                }
             }
+
+            // 2. Find the text objects and safely shift their Mesh Renderers
+            TMP_Text[] textComponents = rootWindow.GetComponentsInChildren<TMP_Text>();
+            foreach (TMP_Text txt in textComponents)
+            {
+                if (txt != null)
+                {
+                    Renderer textRenderer = txt.GetComponent<Renderer>();
+                    if (textRenderer != null)
+                    {
+                        textRenderer.sortingOrder = currentHighestOrder + (textRenderer.sortingOrder % 10);
+                    }
+                }
+            }
+
+            // 3. NEW: Find any World Space Canvases and shift their sorting order!
+            Canvas[] windowCanvases = rootWindow.GetComponentsInChildren<Canvas>();
+            foreach (Canvas canvas in windowCanvases)
+            {
+                if (canvas != null)
+                {
+                    canvas.sortingOrder = currentHighestOrder + 5;
+                }
+            }
+
             currentHighestWindow = currWindow;
         }
     }
