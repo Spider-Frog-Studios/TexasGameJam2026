@@ -12,7 +12,6 @@ public class MouseGrab : MonoBehaviour
     void Start()
     {
         
-
     }
 
     // Update is called once per frame
@@ -21,7 +20,7 @@ public class MouseGrab : MonoBehaviour
         if(isBeingDragged && currentDragger != null)
         {
             Vector3 draggerPos = currentDragger.position;
-            transform.parent.position = draggerPos + grabOffset;
+            transform.parent.position = new Vector3(draggerPos.x + grabOffset.x, draggerPos.y + grabOffset.y, transform.parent.position.z);
         }
     }
 
@@ -42,6 +41,33 @@ public class MouseGrab : MonoBehaviour
         {
             isBeingDragged = false;
             currentDragger = null;
+        }
+    }
+
+    public void toFront()
+    {
+        Transform rootWindow = transform.parent != null ? transform.parent : transform;
+        SpriteRenderer[] renderers = rootWindow.GetComponentsInChildren<SpriteRenderer>();
+
+        if(renderers.Length > 0)
+        {
+            foreach(SpriteRenderer renderer in renderers)
+            {
+                renderer.sortingOrder = 10; // Set a high sorting order to bring it to the front
+            }
+        }
+    }
+
+    public void toBack()
+    {
+        Transform rootWindow = transform.parent != null ? transform.parent : transform;
+        SpriteRenderer[] renderers = rootWindow.GetComponentsInChildren<SpriteRenderer>();
+        if(renderers.Length > 0)
+        {
+            foreach(SpriteRenderer renderer in renderers)
+            {
+                renderer.sortingOrder = 0; // Set a low sorting order to send it to the back
+            }
         }
     }
 }

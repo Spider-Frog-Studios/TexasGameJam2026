@@ -10,9 +10,8 @@ public class SpawnWindow : MonoBehaviour
         if (windowPrefab != null)
         {
             Vector3 spawnLocation = transform.position;
-            spawnLocation.z = zOffset;
-            Instantiate(windowPrefab, spawnLocation, transform.rotation, null);
-            zOffset -= 0.1f; // Decrease zOffset for the next window
+            Instantiate(windowPrefab, new Vector3(spawnLocation.x, spawnLocation.y, zOffset), transform.rotation, null);
+            zOffset -= 0.5f; // Decrease zOffset for the next window
         }
         else
         {
@@ -25,9 +24,12 @@ public class SpawnWindow : MonoBehaviour
         GameObject newWindow = null;
         if (windowPrefab != null)
         {
-            location.z = zOffset;
-            newWindow = Instantiate(windowPrefab, location, transform.rotation, null);
-            zOffset -= 0.1f; // Decrease zOffset for the next window
+            float randomR = Random.Range(.2f, .8f);
+            float randomG = Random.Range(.2f, .8f);
+            float randomB = Random.Range(.2f, .8f);
+            newWindow = Instantiate(windowPrefab, new Vector3(location.x, location.y, zOffset), transform.rotation, null);
+            newWindow.GetComponentInChildren<SpriteRenderer>().color = new Color(randomR, randomG, randomB, 1f); // Set the color to white with 50% transparency
+            zOffset -= 0.5f; // Decrease zOffset for the next window
         }
         else
         {
