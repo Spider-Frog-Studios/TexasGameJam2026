@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4606569189161247673}
   - component: {fileID: 5116312830690471795}
   - component: {fileID: 5817167403027558827}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: curseorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 6c33673701b3f3e49adec6b9ee5ec2db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -337,7 +337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8706088269596041821}
   - component: {fileID: 6543844632309662427}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Curseor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

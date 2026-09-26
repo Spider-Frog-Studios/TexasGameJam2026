@@ -6,18 +6,12 @@ public class MouseGrab : MonoBehaviour
     private bool isBeingDragged = false;
     private Vector3 grabOffset;
     private Transform currentDragger;
+    private static GameObject currentHighestWindow;
+    private static int currentHighestOrder = 10;
 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        if(isBeingDragged && currentDragger != null)
+        if (isBeingDragged && currentDragger != null)
         {
             Vector3 draggerPos = currentDragger.position;
             transform.parent.position = new Vector3(draggerPos.x + grabOffset.x, draggerPos.y + grabOffset.y, transform.parent.position.z);
@@ -26,12 +20,12 @@ public class MouseGrab : MonoBehaviour
 
     public void StartDragging(Transform draggerTransform)
     {
-        if(!isBeingDragged)
+        if (!isBeingDragged)
         {
             isBeingDragged = true;
             currentDragger = draggerTransform;
             grabOffset = (Vector3)transform.parent.position - (Vector3)draggerTransform.position;
-            grabOffset.z = 0; // Ensure the offset is only in the XY plane
+            grabOffset.z = 0;
         }
     }
 
@@ -48,26 +42,20 @@ public class MouseGrab : MonoBehaviour
     {
         Transform rootWindow = transform.parent != null ? transform.parent : transform;
         SpriteRenderer[] renderers = rootWindow.GetComponentsInChildren<SpriteRenderer>();
+        GameObject currWindow = rootWindow.gameObject;
 
-        if(renderers.Length > 0)
+        if (currWindow != null && currWindow != currentHighestWindow && renderers.Length > 0)
         {
-            foreach(SpriteRenderer renderer in renderers)
-            {
-                renderer.sortingOrder = 10; // Set a high sorting order to bring it to the front
-            }
-        }
-    }
+            // FIX 2: Give the entire window a fresh base block of sorting order layers.
+            // Spacing them out by 10 ensures child elements keep their relative depths
+            currentHighestOrder += 10;
 
-    public void toBack()
-    {
-        Transform rootWindow = transform.parent != null ? transform.parent : transform;
-        SpriteRenderer[] renderers = rootWindow.GetComponentsInChildren<SpriteRenderer>();
-        if(renderers.Length > 0)
-        {
-            foreach(SpriteRenderer renderer in renderers)
+            foreach (SpriteRenderer renderer in renderers)
             {
-                renderer.sortingOrder = 0; // Set a low sorting order to send it to the back
+                // Re-calculates internal layered spacing (e.g. text stays on top of panels)
+                renderer.sortingOrder = currentHighestOrder + (renderer.sortingOrder % 10);
             }
+            currentHighestWindow = currWindow;
         }
     }
 }

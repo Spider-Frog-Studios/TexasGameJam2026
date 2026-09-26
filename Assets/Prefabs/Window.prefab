@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 852534262997289555}
   - component: {fileID: 5616211597197539590}
   - component: {fileID: 4566988435035957605}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: XButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 8080000477476465512}
   - component: {fileID: 5395805679919512021}
   - component: {fileID: 4357141294245681494}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3178604362576167662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 2199007670004035213}
   - component: {fileID: 3311215023892217543}
   - component: {fileID: 8592820521623952272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrabBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

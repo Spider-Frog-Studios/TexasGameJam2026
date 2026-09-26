@@ -2,7 +2,7 @@
 - Project name: TexasGameJam2026
 - Unity version: Unity 6000.4.7f1
 - Active game object:
-  - Name: Background
+  - Name: GrabBar
   - Tag: Untagged
-  - Layer: Default
+  - Layer: Windows
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
