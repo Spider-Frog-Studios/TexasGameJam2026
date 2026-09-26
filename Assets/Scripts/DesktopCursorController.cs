@@ -36,7 +36,11 @@ public class DesktopCursorController : MonoBehaviour
                     selectedWindow = clickedObject;
                     Debug.Log("Window clicked!");
                     selectedWindow.GetComponent<MouseGrab>().StartDragging(this.transform);
-                } else
+                } else if(clickedObject.GetComponent<DestroyObject>())
+                {
+                    clickedObject.GetComponent<DestroyObject>().ButtonPressed();
+                }
+                else
                 {
                     Debug.Log("Clicked object is not a window.");
                 }
