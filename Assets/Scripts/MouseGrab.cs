@@ -3,7 +3,6 @@ using UnityEngine.InputSystem;
 
 public class MouseGrab : MonoBehaviour
 {
-    private Transform windowTransform;
     private bool isBeingDragged = false;
     private Vector3 grabOffset;
     private Transform currentDragger;
@@ -12,7 +11,7 @@ public class MouseGrab : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        windowTransform = transform.parent;
+        
 
     }
 
@@ -22,7 +21,7 @@ public class MouseGrab : MonoBehaviour
         if(isBeingDragged && currentDragger != null)
         {
             Vector3 draggerPos = currentDragger.position;
-            windowTransform.position = draggerPos + grabOffset;
+            transform.parent.position = draggerPos + grabOffset;
         }
     }
 
@@ -32,7 +31,7 @@ public class MouseGrab : MonoBehaviour
         {
             isBeingDragged = true;
             currentDragger = draggerTransform;
-            grabOffset = (Vector3)windowTransform.position - (Vector3)draggerTransform.position;
+            grabOffset = (Vector3)transform.parent.position - (Vector3)draggerTransform.position;
             grabOffset.z = 0; // Ensure the offset is only in the XY plane
         }
     }

@@ -31,10 +31,10 @@ public class DesktopCursorController : MonoBehaviour
             {
                 GameObject clickedObject = hitCollider.gameObject;
 
-                if (clickedObject.GetComponent<MouseGrab>())
+                if (clickedObject.GetComponent<MouseGrab>() && selectedWindow == null)
                 {
                     selectedWindow = clickedObject;
-                    Debug.Log("Window clicked!");
+                    //Debug.Log("Window clicked!");
                     selectedWindow.GetComponent<MouseGrab>().StartDragging(this.transform);
                 } else if(clickedObject.GetComponent<DestroyObject>() && selectedWindow == null)
                 {
@@ -42,11 +42,11 @@ public class DesktopCursorController : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Clicked object is not a window.");
+                    //Debug.Log("Clicked object is not a window.");
                 }
             } else
             {
-                Debug.Log("No object clicked.");
+                //Debug.Log("No object clicked.");
             }
         } else if(selectedWindow != null)
         {

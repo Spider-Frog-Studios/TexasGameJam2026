@@ -20,17 +20,20 @@ public class SpawnWindow : MonoBehaviour
         }
     }
 
-    public void CreateWindow(Vector3 location)
+    public GameObject CreateWindow(Vector3 location)
     {
+        GameObject newWindow = null;
         if (windowPrefab != null)
         {
             location.z = zOffset;
-            Instantiate(windowPrefab, location, transform.rotation, null);
+            newWindow = Instantiate(windowPrefab, location, transform.rotation, null);
             zOffset -= 0.1f; // Decrease zOffset for the next window
         }
         else
         {
             Debug.LogError("Window prefab is not assigned.");
         }
+
+        return newWindow;
     }
 }
