@@ -15,7 +15,14 @@ public class Window : MonoBehaviour
 
     }
 
-    
+    void OnClick(InputValue value)
+    {
+        if (value.isPressed)
+        {
+            // Handle click event
+            Debug.Log("Window clicked!");
+        }
+    }
 
     void FollowObject(Transform target)
     {
