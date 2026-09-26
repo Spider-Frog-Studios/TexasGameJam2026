@@ -21,7 +21,7 @@ public class MouseGrab : MonoBehaviour
         if(isBeingDragged && currentDragger != null)
         {
             Vector3 draggerPos = currentDragger.position;
-            transform.parent.position = draggerPos + grabOffset;
+            transform.parent.position = new Vector3(draggerPos.x + grabOffset.x, draggerPos.y + grabOffset.y, transform.parent.position.z);
         }
     }
 
