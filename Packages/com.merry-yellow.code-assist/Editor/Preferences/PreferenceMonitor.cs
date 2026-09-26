@@ -54,7 +54,7 @@ namespace Meryel.UnityCodeAssist.Editor.Preferences
 
         private PreferenceEntryHolder? prefEntryHolder;
 
-        private PreferenceStorageAccessor? entryAccessor;
+        private PreferanceStorageAccessor? entryAccessor;
 
 
         private bool updateView = false;
