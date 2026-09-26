@@ -11,6 +11,7 @@ public class DesktopCursorController : MonoBehaviour
     {
         mainCamera = Camera.main;
         leftMousePressed = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     void Update()
