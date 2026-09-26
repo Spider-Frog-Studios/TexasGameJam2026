@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpawnWindow : MonoBehaviour
 {
-    GameObject windowPrefab;
+    [SerializeField] GameObject windowPrefab;
     [SerializeField] float zOffset;
 
     public void CreateWindow()

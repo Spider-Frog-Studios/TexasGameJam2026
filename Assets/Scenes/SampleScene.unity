@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9a56c31f3c47f4b9b41f236e85d6bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnWindow
+  windowPrefab: {fileID: 6652358165355948460, guid: dfa3ac2271645d744aaddb09abfdb0bc, type: 3}
   zOffset: 20
 --- !u!1 &1181487140
 GameObject:
