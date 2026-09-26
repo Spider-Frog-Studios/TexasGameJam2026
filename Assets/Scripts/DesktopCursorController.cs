@@ -36,6 +36,7 @@ public class DesktopCursorController : MonoBehaviour
                     selectedWindow = clickedObject;
                     //Debug.Log("Window clicked!");
                     selectedWindow.GetComponent<MouseGrab>().StartDragging(this.transform);
+                    selectedWindow.GetComponent<MouseGrab>().toFront();
                 } else if(clickedObject.GetComponent<DestroyObject>() && selectedWindow == null)
                 {
                     clickedObject.GetComponent<DestroyObject>().ButtonPressed();
@@ -51,6 +52,7 @@ public class DesktopCursorController : MonoBehaviour
         } else if(selectedWindow != null)
         {
             selectedWindow.GetComponent<MouseGrab>().StopDragging();
+            selectedWindow.GetComponent<MouseGrab>().toBack();
             selectedWindow = null;
         }
     }
