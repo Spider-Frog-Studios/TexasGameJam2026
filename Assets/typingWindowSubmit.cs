@@ -1,7 +1,8 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
-using System.Collections;
 
 public class typingWindowSubmit : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class typingWindowSubmit : MonoBehaviour
     [SerializeField] private GameObject windowRoot;
     [SerializeField] private Button submitButton;
     [SerializeField] private windowCountdownText countdown;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip closeClip;
     private SelectItemName selector;
     private Coroutine errorFlash;
     private ColorBlock originalColors;
@@ -45,6 +48,7 @@ public class typingWindowSubmit : MonoBehaviour
         else
         {
             Debug.Log("Incorrect. Try again!");
+            audioSource.PlayOneShot(closeClip);
             if (submitButton != null)
             {
                 if (errorFlash != null)

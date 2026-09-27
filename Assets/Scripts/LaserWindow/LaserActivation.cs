@@ -8,6 +8,10 @@ public class LaserActivation : MonoBehaviour
     [SerializeField] float activationTime = 5f; // Time in seconds before the laser activates
     private bool timerIsRunning = true;
 
+    [Header("Audio")]
+    [SerializeField] AudioClip laserShot;
+    private AudioSource audioSource;
+
     [Header("UI Reference")]
     [SerializeField] TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
     private GameObject laser; // Reference to the laser GameObject
@@ -15,6 +19,7 @@ public class LaserActivation : MonoBehaviour
     void Start()
     {
         laser.SetActive(false); // Ensure the laser is initially off
+        audioSource = transform.parent.GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +38,8 @@ public class LaserActivation : MonoBehaviour
                 timerIsRunning = false;
 
                 // 1. Turn the laser on
+                audioSource.Stop();
+                audioSource.PlayOneShot(laserShot);
                 laser.SetActive(true);
 
                 // 2. FORCE sorting order update right after activation

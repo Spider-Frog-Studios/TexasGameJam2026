@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class DesktopCursorController : MonoBehaviour
@@ -6,6 +7,9 @@ public class DesktopCursorController : MonoBehaviour
     private Camera mainCamera;
     private GameObject selectedWindow;
     private bool leftMousePressed;
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip clickSound;
 
     void Start()
     {
@@ -31,6 +35,7 @@ public class DesktopCursorController : MonoBehaviour
 
         if (leftMousePressed)
         {
+            audioSource.PlayOneShot(clickSound);
             Vector2 mouseScreenPos = Mouse.current.position.ReadValue();
             Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
 
