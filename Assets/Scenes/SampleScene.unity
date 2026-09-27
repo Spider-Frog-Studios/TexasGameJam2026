@@ -587,7 +587,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
       propertyPath: windowPrefabs.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
       propertyPath: 'windowPrefabs.Array.data[0]'
@@ -604,7 +604,15 @@ PrefabInstance:
     - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
       propertyPath: 'windowPrefabs.Array.data[3]'
       value: 
-      objectReference: {fileID: 2113301676035436805, guid: 51cb4e2db95dc40dd8cc92946d3dd938, type: 3}
+      objectReference: {fileID: 6652358165355948460, guid: 01dd48186cca7c24ea5e73b1934e3399, type: 3}
+    - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: 'windowPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 6391079551124382516, guid: 93f704d422685374a91057c5bb042102, type: 3}
+    - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: 'windowPrefabs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 6652358165355948460, guid: 01dd48186cca7c24ea5e73b1934e3399, type: 3}
     - target: {fileID: 6585701079928438834, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
       propertyPath: m_Name
       value: CurseorPrefab

@@ -10,7 +10,7 @@ public class LaserActivation : MonoBehaviour
 
     [Header("UI Reference")]
     [SerializeField] TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
-    [SerializeField] GameObject laser; // Reference to the laser GameObject
+    private GameObject laser; // Reference to the laser GameObject
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -46,6 +46,11 @@ public class LaserActivation : MonoBehaviour
                 transform.parent.GetComponentInChildren<MouseGrab>().toFront();
             }
         }
+    }
+
+    public void SetLaser(GameObject laser)
+    {
+        this.laser = laser;
     }
 
     void DisplayTime(float timeToDisplay)
