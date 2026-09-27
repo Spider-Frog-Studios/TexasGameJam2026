@@ -10,8 +10,8 @@ public class LaserDamage : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Player entered laser trigger! Dealing damage: " + damageAmount);
-            // Replace with your health script logic if needed:
-            // other.GetComponent<PlayerHealth>()?.TakeDamage(damageAmount);
+            GameManager.Instance.AddMalware(15f);
+
         }
     }
 

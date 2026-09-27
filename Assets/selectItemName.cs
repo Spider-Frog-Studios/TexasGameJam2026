@@ -43,7 +43,6 @@ public class SelectItemName : MonoBehaviour
             longestLength = Mathf.Max(longestLength, item.Length);
         }
 
-        // Always allow at least the shortest item, then gradually unlock longer ones.
         int initialLimit = Mathf.Clamp(startingMaxCharacters, shortestLength, longestLength);
         int characterLimit = Mathf.FloorToInt(Mathf.Lerp(initialLimit, longestLength, difficulty));
         var eligibleItems = new List<string>();

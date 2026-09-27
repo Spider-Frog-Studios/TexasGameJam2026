@@ -40,7 +40,6 @@ public class windowCountdownText : MonoBehaviour
             : seconds;
     }
 
-    // Resolve the deadline here too, so a click cannot win after time has expired.
     public bool TryComplete()
     {
         if (finished)

@@ -8,7 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Water, UI, Windows, Curseor
 - Active game object:
-  - Name: Window_Blank_Canvas (XButton)
+  - Name: GameManager
   - Tag: Untagged
-  - Layer: Windows
+  - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
