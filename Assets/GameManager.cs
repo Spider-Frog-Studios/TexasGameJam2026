@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,7 +20,15 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance =  this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -75,6 +84,14 @@ public class GameManager : MonoBehaviour
         return gameTime;
     }
 
+    public void ResetGame()
+    {
+        gameTime = 0;
+        malwareSeconds = 0f;
+        malwareLimitReached = false;
+        windowsCompleted = 0;
+    }
+
     public int GetWindowsCompleted()
     {
         return windowsCompleted;
@@ -88,5 +105,6 @@ public class GameManager : MonoBehaviour
     public void endGame()
     {
         Debug.Log("Go back to lobby");
+        SceneManager.LoadScene("LoseScreen");
     }
 }

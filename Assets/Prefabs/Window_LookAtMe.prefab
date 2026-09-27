@@ -157,6 +157,7 @@ MonoBehaviour:
   - {fileID: 8631081307174366545, guid: 8180b6f121872964fa84ff1cef635481, type: 3}
   - {fileID: 3489773252829474330, guid: 9a230ec52e82c0e49ba3c71e48b44127, type: 3}
   - {fileID: -1942690100530976606, guid: d7e0fa3390430dd4198a6577498f731c, type: 3}
+  - {fileID: -4235298309888116347, guid: aaba9f9aff6c104438ad990872d9b14c, type: 3}
   uniqueSound: {fileID: 0}
   cannonSprites: 0
   hasUniqueAudio: 0
