@@ -68,7 +68,7 @@ public class CurseorMovement : MonoBehaviour
 
         int randomIndex = Random.Range(0, 10);
 
-        if(popUpSpawner != null && randomIndex <= 1 && currentPopUp == null)
+        if(popUpSpawner != null && randomIndex <= 0 && currentPopUp == null)
         {
             currentPopUp = popUpSpawner.GetComponent<SpawnPopUp>().CreatePopUp();
         }

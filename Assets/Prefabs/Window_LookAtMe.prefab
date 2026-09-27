@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1458968709893423835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.457, z: 0}
+  m_LocalPosition: {x: 0, y: -0.607795, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -221,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 6249973072764691643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.836, y: 0.375, z: -0.02}
+  m_LocalPosition: {x: 0.836, y: 0.22420499, z: -0.02}
   m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -344,8 +344,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c800491600531c44c9b038ab6a5bb34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyObject
-  audioSource: {fileID: 4456681826632663311}
-  closeClip: {fileID: 8300000, guid: fe7926552575d6148a0e80de50a17b5f, type: 3}
 --- !u!1 &7003530275875964171
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +372,7 @@ Transform:
   m_GameObject: {fileID: 7003530275875964171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.372, z: -0.01}
+  m_LocalPosition: {x: 0, y: 0.221205, z: -0.01}
   m_LocalScale: {x: 1.8875, y: 0.22755939, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -523,7 +521,7 @@ Transform:
   m_GameObject: {fileID: 8789872785646527028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.33564, y: 0.382795, z: 10}
+  m_LocalPosition: {x: 0.33564, y: 0.232, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
