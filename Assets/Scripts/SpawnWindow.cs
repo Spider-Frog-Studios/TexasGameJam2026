@@ -7,6 +7,9 @@ public class SpawnWindow : MonoBehaviour
 
     public GameObject CreateWindow(Vector3 location)
     {
+        if (windowPrefabs == null || windowPrefabs.Length == 0)
+            return null;
+
         GameObject newWindow = null;
         GameObject currPrefab = windowPrefabs[Random.Range(0, windowPrefabs.Length)];
         if (currPrefab != null)
@@ -15,7 +18,9 @@ public class SpawnWindow : MonoBehaviour
             float randomG = Random.Range(.2f, .8f);
             float randomB = Random.Range(.2f, .8f);
             newWindow = Instantiate(currPrefab, new Vector3(location.x, location.y, zOffset), transform.rotation, null);
-            newWindow.GetComponentInChildren<SpriteRenderer>().color = new Color(randomR, randomG, randomB, 1f); // Set the color to white with 50% transparency
+            SpriteRenderer renderer = newWindow.GetComponentInChildren<SpriteRenderer>();
+            if (renderer != null)
+                renderer.color = new Color(randomR, randomG, randomB, 1f);
             zOffset -= 0.5f; // Decrease zOffset for the next window
         }
 
