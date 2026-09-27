@@ -5,7 +5,7 @@ public class DesktopCursorController : MonoBehaviour
 {
     private Camera mainCamera;
     private GameObject selectedWindow;
-    public static bool leftMousePressed;
+    private bool leftMousePressed;
 
     void Start()
     {
@@ -86,9 +86,6 @@ public class DesktopCursorController : MonoBehaviour
                             grabScript.toFront();
                             selectedWindow = grabScript.gameObject;
                         }
-                    } else if (clickedObject.GetComponent<ParrySkillCheck>())
-                    {
-
                     }
                 }
             }
