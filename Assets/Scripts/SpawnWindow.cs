@@ -27,7 +27,7 @@ public class SpawnWindow : MonoBehaviour
         {
             newWindow = Instantiate(currPrefab, new Vector3(location.x, location.y, zOffset), transform.rotation, null);
             PlayVoiceLine(randomIndex);
-            zOffset -= 0.5f; // Decrease zOffset for the next window
+            zOffset = (zOffset - 0.5f) % -2.5f;  // Decrease zOffset for the next window
         }
 
         return newWindow;
