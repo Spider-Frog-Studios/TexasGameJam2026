@@ -10,7 +10,8 @@ public class EndGameStats : MonoBehaviour
     {
         if (GameManager.Instance != null)
         {
-            timeText.text = GameManager.Instance.GetGameTime().ToString();
+            int time = (int)GameManager.Instance.GetGameTime();
+            timeText.text = time.ToString() + " Secs";
             windowsWonText.text = GameManager.Instance.GetWindowsCompleted().ToString();
         }
     }
