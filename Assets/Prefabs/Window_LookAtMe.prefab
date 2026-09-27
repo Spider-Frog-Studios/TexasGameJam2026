@@ -154,6 +154,10 @@ MonoBehaviour:
   notepadSprites:
   - {fileID: -276324506769779409, guid: 39b84b2a894ffda438f9f4772d9e2a88, type: 3}
   - {fileID: 9219272360845451235, guid: 14aa819b370a9f3468c7cecf24b6a92e, type: 3}
+  - {fileID: 8631081307174366545, guid: 8180b6f121872964fa84ff1cef635481, type: 3}
+  - {fileID: 3489773252829474330, guid: 9a230ec52e82c0e49ba3c71e48b44127, type: 3}
+  cannonSprites: 0
+  lasers: []
 --- !u!1 &3576630757134862132
 GameObject:
   m_ObjectHideFlags: 0
