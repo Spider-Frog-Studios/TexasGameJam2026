@@ -53,7 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   progressBar: {fileID: 8775220269551583921}
   percentageText: {fileID: 6561630773616032611}
-  totalTime: 180
 --- !u!1 &534730527770892674
 GameObject:
   m_ObjectHideFlags: 0
