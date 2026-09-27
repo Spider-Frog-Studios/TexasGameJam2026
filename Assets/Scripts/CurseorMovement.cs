@@ -14,6 +14,8 @@ public class CurseorMovement : MonoBehaviour
     private bool grabbedWindow = false;
     [SerializeField] Transform[] windowSpawnLocations;
     [SerializeField] GameObject windowSpawner;
+    [SerializeField] GameObject popUpSpawner;
+    private GameObject currentPopUp;
     private GameObject currentWindow;
     private Transform spawnLocation;
 
@@ -65,7 +67,13 @@ public class CurseorMovement : MonoBehaviour
         currentTargetWorld = new Vector2(worldPoint.x, worldPoint.y);
 
         int randomIndex = Random.Range(0, 10);
-        if (!grabbedWindow && randomIndex < 3 && windowSpawnLocations.Length > 0)
+
+        if(popUpSpawner != null && randomIndex <= 1 && currentPopUp == null)
+        {
+            currentPopUp = popUpSpawner.GetComponent<SpawnPopUp>().CreatePopUp();
+        }
+
+        if (!grabbedWindow && randomIndex <= 4 && windowSpawnLocations.Length > 0)
         {
             SetUpNextTargetAsWindow();
         }
