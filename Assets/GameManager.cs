@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField, Min(1f)] private float malwareFillSeconds = 180f;
     private float malwareSeconds;
     private bool malwareLimitReached;
+    private bool gameIsRunning;
 
     public event System.Action<float> MalwareAdjusted;
 
@@ -19,18 +21,32 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance =  this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+
+        DontDestroyOnLoad(gameObject);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        gameIsRunning = SceneManager.GetActiveScene().name == "SampleScene";
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!gameIsRunning)
+            return;
         gameTime += Time.deltaTime;
         SetMalwareSeconds(malwareSeconds + Time.deltaTime);
     }
 
     public void AddMalware(float seconds)
     {
+        if (!gameIsRunning)
+            return;
         AudioSource source = GetComponent<AudioSource>();
         if (source != null && errorSound != null)
             source.PlayOneShot(errorSound);
@@ -44,6 +60,8 @@ public class GameManager : MonoBehaviour
 
     private void AdjustMalware(float seconds)
     {
+        if (!gameIsRunning)
+            return;
         SetMalwareSeconds(malwareSeconds + seconds);
         if (seconds != 0f)
         {
@@ -62,10 +80,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        gameIsRunning = scene.name == "SampleScene";
+        if (gameIsRunning)
+            ResetGame();
+    }
+
     private void OnDestroy()
     {
         if (Instance == this)
         {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
             Instance = null;
         }
     }
@@ -75,6 +101,14 @@ public class GameManager : MonoBehaviour
         return gameTime;
     }
 
+    public void ResetGame()
+    {
+        gameTime = 0;
+        malwareSeconds = 0f;
+        malwareLimitReached = false;
+        windowsCompleted = 0;
+    }
+
     public int GetWindowsCompleted()
     {
         return windowsCompleted;
@@ -82,11 +116,15 @@ public class GameManager : MonoBehaviour
 
     public void CompleteWindow()
     {
-        windowsCompleted++;
+        if (gameIsRunning)
+            windowsCompleted++;
     }
 
     public void endGame()
     {
-        Debug.Log("Go back to lobby");
+        if (!gameIsRunning)
+            return;
+        gameIsRunning = false;
+        SceneManager.LoadScene("LoseScreen");
     }
 }

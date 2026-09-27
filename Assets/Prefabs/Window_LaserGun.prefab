@@ -120,6 +120,7 @@ MonoBehaviour:
   activationTime: 5
   laserShot: {fileID: 8300000, guid: b5d2fa8e55f03fb4cbb325c8e685351e, type: 3}
   timerText: {fileID: 3906391583099239104}
+  laser: {fileID: 0}
 --- !u!1 &651122830784245374
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,8 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c800491600531c44c9b038ab6a5bb34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyObject
-  audioSource: {fileID: 5502418409484642018}
-  closeClip: {fileID: 8300000, guid: fe7926552575d6148a0e80de50a17b5f, type: 3}
 --- !u!1 &2377546065168672935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,7 +1071,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 30d1209e398d120498ab5aa6db8a5282, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0

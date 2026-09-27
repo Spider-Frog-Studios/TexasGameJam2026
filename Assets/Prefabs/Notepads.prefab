@@ -151,8 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c800491600531c44c9b038ab6a5bb34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyObject
-  audioSource: {fileID: 5563782147722719785}
-  closeClip: {fileID: 8300000, guid: fe7926552575d6148a0e80de50a17b5f, type: 3}
 --- !u!1 &1348705055206118448
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,12 +234,12 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5425987879721414974, guid: e153c0e0d7ba319438bd7686f6027d3b, type: 3}
+  m_Sprite: {fileID: -5648181717182108571, guid: 7f6b15cd9df7cfc488bd7284799b97e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3, y: 0.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -284,8 +282,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12.12, y: 3.32}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 0.8}
+    newSize: {x: 3, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -312,7 +310,17 @@ MonoBehaviour:
   - {fileID: -4297087865051960170, guid: 0a682567c5c7a8a418218392903da9e0, type: 3}
   - {fileID: 1777451998678335160, guid: c0b619b37dad78d46a678cf21f0f3468, type: 3}
   - {fileID: -445225273538532418, guid: 68ed105b9e0edd0448c9704c0b16be75, type: 3}
+  - {fileID: 8809218685093667708, guid: d22781e7ef0171446bf416382c5754d8, type: 3}
+  - {fileID: 1098033497956177483, guid: 2d697a6da6e490041995e1ce7074d832, type: 3}
+  - {fileID: 5951075364945309783, guid: 80189a401419c2043af6371ee676cc4e, type: 3}
+  - {fileID: 6624473007944506582, guid: 1d641f4ca3ea1ab46ad0ad1189fca41e, type: 3}
+  - {fileID: -2044989747803409052, guid: 474667a74bee61e42a95cd77eb02a2f0, type: 3}
+  - {fileID: -7915838968172312916, guid: ecdd2f8342a213a4bb0c4f0a34c6e2ac, type: 3}
+  uniqueSound: {fileID: 0}
   cannonSprites: 0
+  hasUniqueAudio: 0
+  audioOneShot: 0
+  uniqueIndex: 0
   lasers: []
 --- !u!1 &6652358165355948460
 GameObject:

@@ -28,9 +28,9 @@ Transform:
   m_GameObject: {fileID: 1458968709893423835}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.895795, z: 0}
+  m_LocalPosition: {x: -0.36363983, y: -2.021, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2776044671549078409}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -276324506769779409, guid: 39b84b2a894ffda438f9f4772d9e2a88, type: 3}
+  m_Sprite: {fileID: -6053735894238660146, guid: 49157d3cddcd88f4d8b177a8f37101e2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -131,13 +131,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.9, y: 1.9}
+    oldSize: {x: 7.38, y: 4.14}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.9, y: 1.9}
+  m_Size: {x: 7.38, y: 4.14}
   m_EdgeRadius: 0
 --- !u!114 &8315096993050453237
 MonoBehaviour:
@@ -151,13 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fc98d8e31921f4fac0e1ad0e866bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteRandomizer
-  notepadSprites:
-  - {fileID: -276324506769779409, guid: 39b84b2a894ffda438f9f4772d9e2a88, type: 3}
-  - {fileID: 9219272360845451235, guid: 14aa819b370a9f3468c7cecf24b6a92e, type: 3}
-  - {fileID: 8631081307174366545, guid: 8180b6f121872964fa84ff1cef635481, type: 3}
-  - {fileID: 3489773252829474330, guid: 9a230ec52e82c0e49ba3c71e48b44127, type: 3}
-  - {fileID: -1942690100530976606, guid: d7e0fa3390430dd4198a6577498f731c, type: 3}
-  - {fileID: -4235298309888116347, guid: aaba9f9aff6c104438ad990872d9b14c, type: 3}
+  notepadSprites: []
   uniqueSound: {fileID: 0}
   cannonSprites: 0
   hasUniqueAudio: 0
@@ -174,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2776044671549078409}
   m_Layer: 6
-  m_Name: Window_LookAtMe
+  m_Name: Window_Kojima
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +184,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6735323278320184184}
@@ -227,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 6249973072764691643}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.836, y: -0.063795, z: -0.02}
+  m_LocalPosition: {x: 3.19636, y: -0.063795, z: -0.02}
   m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -378,8 +372,8 @@ Transform:
   m_GameObject: {fileID: 7003530275875964171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.06679499, z: -0.01}
-  m_LocalScale: {x: 1.8875, y: 0.22755939, z: 1}
+  m_LocalPosition: {x: -0.37, y: -0.081, z: -0.01}
+  m_LocalScale: {x: 7.315832, y: 0.21618141, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2776044671549078409}
@@ -527,7 +521,7 @@ Transform:
   m_GameObject: {fileID: 8789872785646527028}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.33564, y: -0.056, z: 10}
+  m_LocalPosition: {x: 2.696, y: -0.056, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -151,8 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c800491600531c44c9b038ab6a5bb34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DestroyObject
-  audioSource: {fileID: 4599950584389336512}
-  closeClip: {fileID: 8300000, guid: fe7926552575d6148a0e80de50a17b5f, type: 3}
 --- !u!1 &2277392333249219438
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,11 +194,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Resource: {fileID: 8300000, guid: 2b7cbcc681ab14842ac90bc76342e16e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.8
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -588,7 +586,11 @@ MonoBehaviour:
   - {fileID: 2791610489345258139, guid: bf378ad52d5fe104c9fe858bc8b7f193, type: 3}
   - {fileID: -2251769304761035782, guid: 23c19a25d584a5e4d97b2680033cbe6f, type: 3}
   - {fileID: 292656634574285611, guid: 954c62a3086fb5242a37c7a57174c509, type: 3}
+  uniqueSound: {fileID: 0}
   cannonSprites: 0
+  hasUniqueAudio: 1
+  audioOneShot: 0
+  uniqueIndex: 2
   lasers: []
 --- !u!1 &6391079551124382516
 GameObject:

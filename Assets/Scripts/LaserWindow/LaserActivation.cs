@@ -14,7 +14,7 @@ public class LaserActivation : MonoBehaviour
 
     [Header("UI Reference")]
     [SerializeField] TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI component for displaying the timer
-    [SerializeField] private GameObject laser; // Reference to the laser GameObject
+    private GameObject laser; // Reference to the laser GameObject
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +26,7 @@ public class LaserActivation : MonoBehaviour
         }
         laser.SetActive(false); // Ensure the laser is initially off
         audioSource = transform.parent.GetComponentInChildren<AudioSource>();
+        audioSource.volume = 0.2f;
     }
 
     // Update is called once per frame
@@ -47,6 +48,7 @@ public class LaserActivation : MonoBehaviour
                 if (audioSource != null && laserShot != null)
                 {
                     audioSource.Stop();
+                    audioSource.volume = 0.5f;
                     audioSource.PlayOneShot(laserShot);
                 }
                 laser.SetActive(true);

@@ -83,6 +83,9 @@ public class DesktopCursorController : MonoBehaviour
                     else if (clickedObject.GetComponent<DestroyObject>() && selectedWindow == null)
                     {
                         clickedObject.GetComponent<DestroyObject>().ButtonPressed();
+                    } else if (clickedObject.GetComponent<ChangeScene>())
+                    {
+                        clickedObject.GetComponent<ChangeScene>().LoadScene();
                     }
                     else if (clickedObject.layer == 6)
                     {

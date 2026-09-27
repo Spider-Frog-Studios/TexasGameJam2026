@@ -52,10 +52,11 @@ MonoBehaviour:
   - {fileID: 6391079551124382516, guid: 93f704d422685374a91057c5bb042102, type: 3}
   - {fileID: 3576630757134862132, guid: 346e4f9abfabb0d479ef4a1d95e63c3d, type: 3}
   - {fileID: 1157294991617007622, guid: e08e85d80d67442ea962b6542329c2f4, type: 3}
+  - {fileID: 3576630757134862132, guid: 985008abdd24cdc48bee5915212cb560, type: 3}
   zOffset: 20
   audioSource: {fileID: 217062737492624803}
   laserVoicelines:
-  - {fileID: 8300000, guid: a0befe11f3c212a448732a52d37c993e, type: 3}
+  - {fileID: 8300000, guid: 2296fe1a928984c4995e0988daf4da40, type: 3}
   inputVoicelines:
   - {fileID: 8300000, guid: c4c111aa1b927dc449c17f24487ddb8a, type: 3}
   notepadVoicelines:
@@ -66,6 +67,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 36d4e6251e82626458d5aedd19430efe, type: 3}
   lookAtMeVoicelines:
   - {fileID: 8300000, guid: ca856ef194c04934b88e237aee9d5afe, type: 3}
+  quizVoicelines:
+  - {fileID: 8300000, guid: 97745242605205e45a9123e4b319845c, type: 3}
+  - {fileID: 8300000, guid: 9862e9e8bbaaa7e4398721576c3b6a08, type: 3}
 --- !u!1 &536863484555308824
 GameObject:
   m_ObjectHideFlags: 0

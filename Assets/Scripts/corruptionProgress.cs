@@ -32,6 +32,7 @@ public class CorruptionProgress : MonoBehaviour
     private void UpdateUI()
     {
         float progress = GetProgress();
+        Debug.Log("Progress: " + progress);
         if (progressBar != null)
             progressBar.fillAmount = progress;
         if (percentageText != null)
