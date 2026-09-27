@@ -585,6 +585,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: windowPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: 'windowPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1157294991617007622, guid: e08e85d80d67442ea962b6542329c2f4, type: 3}
+    - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: 'windowPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6391079551124382516, guid: aa28f53c440cbeb4395fbbe5ff5b066a, type: 3}
+    - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: 'windowPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2113301676035436805, guid: 51cb4e2db95dc40dd8cc92946d3dd938, type: 3}
+    - target: {fileID: 3566585345703548892, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: 'windowPrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 6652358165355948460, guid: dfa3ac2271645d744aaddb09abfdb0bc, type: 3}
     - target: {fileID: 6585701079928438834, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
       propertyPath: m_Name
       value: CurseorPrefab
