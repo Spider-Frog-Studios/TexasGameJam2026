@@ -17,7 +17,7 @@ public class ParrySkillCheck : MonoBehaviour
     private float rotationSpeed;
 
     [Tooltip("True = Clockwise, False = Counter-Clockwise")]
-    [SerializeField] private bool clockwise = true;
+    [SerializeField] private bool clockwise;
 
     [Header("Spawn Settings")]
     [Tooltip("How long the pop-in animation takes in seconds.")]
@@ -42,6 +42,8 @@ public class ParrySkillCheck : MonoBehaviour
         cursorColliderChild = playerCursor.GetComponentInChildren<Collider2D>();
         targetColliderChild = targetZone.GetComponentInChildren<Collider2D>();
         rotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed); // Randomize rotation speed for variety
+        int randomDirection = Random.Range(0, 2); // 0 or 1
+        clockwise = randomDirection == 0;
     }
 
     void OnEnable()

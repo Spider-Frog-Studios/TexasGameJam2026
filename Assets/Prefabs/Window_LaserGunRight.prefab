@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 534179105207797965}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.27855155, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8005440939505956328}
@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.9230001, y: -4.15}
+  m_AnchoredPosition: {x: 3, y: -4.41}
   m_SizeDelta: {x: 10.5, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &883319452517433785
@@ -285,9 +285,9 @@ Transform:
   m_GameObject: {fileID: 700395989122441042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7016001, y: -0.188, z: -0.02}
-  m_LocalScale: {x: -0.118306264, y: -0.4013587, z: 1.8397}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 1.955, y: -0.08999999, z: -0.02}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1330615444866491171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -436,8 +436,8 @@ Transform:
   m_GameObject: {fileID: 2487339930375974095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.20020008, y: -0.16, z: -0.01}
-  m_LocalScale: {x: 1.1847253, y: 0.5638352, z: 1}
+  m_LocalPosition: {x: 0.216, y: -0.11099999, z: -0.01}
+  m_LocalScale: {x: 4.0921474, y: 0.65243, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1330615444866491171}
@@ -577,7 +577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &235693423834162962
 Transform:
   m_ObjectHideFlags: 0
@@ -587,9 +587,9 @@ Transform:
   m_GameObject: {fileID: 3318287596036118538}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.573, y: -2.25, z: -0.03}
-  m_LocalScale: {x: 1, y: 3.3070312, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 13.63, y: -2.42, z: -0.03}
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1330615444866491171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -738,9 +738,9 @@ Transform:
   m_GameObject: {fileID: 3344484470277368221}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.201, y: -2.17, z: 0}
-  m_LocalScale: {x: 1.4551362, y: 4.5136404, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.201, y: -2.43, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1330615444866491171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -793,7 +793,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1208040086343421634, guid: ed004b4bb7a899e43ac375d7bb55ee63, type: 3}
+  m_Sprite: {fileID: 5532291327999320498, guid: 2a215180d020dcd4eac1c4bd6263c92b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -841,7 +841,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8242857, y: 1.0314286}
+    oldSize: {x: 1.4, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -859,7 +859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330615444866491171}
   m_Layer: 6
-  m_Name: Window_LaserGun
+  m_Name: Window_LaserGunRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -875,7 +875,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.59, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5743079097834673580}
