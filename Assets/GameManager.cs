@@ -7,6 +7,15 @@ public class GameManager : MonoBehaviour
     private int windowsCompleted;
     public static GameManager Instance;
 
+    [Header("Malware")]
+    [SerializeField, Min(1f)] private float malwareFillSeconds = 180f;
+    private float malwareSeconds;
+    private bool malwareLimitReached;
+
+    public event System.Action<float> MalwareAdjusted;
+
+    public float MalwareProgress => malwareSeconds / Mathf.Max(1f, malwareFillSeconds);
+
     void Awake()
     {
         Instance =  this;
@@ -16,6 +25,45 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         gameTime += Time.deltaTime;
+        SetMalwareSeconds(malwareSeconds + Time.deltaTime);
+    }
+
+    public void AddMalware(float seconds)
+    {
+        AdjustMalware(Mathf.Max(0f, seconds));
+    }
+
+    public void SubtractMalware(float seconds)
+    {
+        AdjustMalware(-Mathf.Max(0f, seconds));
+    }
+
+    private void AdjustMalware(float seconds)
+    {
+        SetMalwareSeconds(malwareSeconds + seconds);
+        if (seconds != 0f)
+        {
+            MalwareAdjusted?.Invoke(seconds);
+        }
+    }
+
+    private void SetMalwareSeconds(float seconds)
+    {
+        float limit = Mathf.Max(1f, malwareFillSeconds);
+        malwareSeconds = Mathf.Clamp(seconds, 0f, limit);
+        if (malwareSeconds >= limit && !malwareLimitReached)
+        {
+            malwareLimitReached = true;
+            endGame();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     public float GetGameTime()
