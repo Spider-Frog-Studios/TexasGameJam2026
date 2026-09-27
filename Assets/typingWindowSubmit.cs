@@ -11,6 +11,7 @@ public class typingWindowSubmit : MonoBehaviour
     [SerializeField] private windowCountdownText countdown;
     private SelectItemName selector;
     private Coroutine errorFlash;
+    private Coroutine resumeTyping;
     private ColorBlock originalColors;
     private bool completed;
     
@@ -25,6 +26,28 @@ public class typingWindowSubmit : MonoBehaviour
             originalColors = submitButton.colors;
     }
     
+    private void OnEnable()
+    {
+        if (inputField != null)
+            inputField.onSelect.AddListener(ResumeTyping);
+    }
+
+    private void ResumeTyping(string text)
+    {
+        if (resumeTyping != null)
+            StopCoroutine(resumeTyping);
+        resumeTyping = StartCoroutine(MoveCaretToEnd());
+    }
+
+    private IEnumerator MoveCaretToEnd()
+    {
+        // Wait for TMP's activation and pointer handling to finish positioning the caret.
+        yield return null;
+        if (inputField != null && inputField.isFocused)
+            inputField.MoveTextEnd(false);
+        resumeTyping = null;
+    }
+
     public void SubmitAnswer()
     {
         if (completed)
@@ -70,6 +93,13 @@ public class typingWindowSubmit : MonoBehaviour
 
     private void OnDisable()
     {
+        if (inputField != null)
+            inputField.onSelect.RemoveListener(ResumeTyping);
+        if (resumeTyping != null)
+        {
+            StopCoroutine(resumeTyping);
+            resumeTyping = null;
+        }
         if (errorFlash != null)
         {
             StopCoroutine(errorFlash);
