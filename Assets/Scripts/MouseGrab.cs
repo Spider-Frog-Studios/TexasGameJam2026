@@ -89,4 +89,9 @@ public class MouseGrab : MonoBehaviour
             currentHighestWindow = currWindow;
         }
     }
+
+    public bool IsBeingDragged()
+    {
+        return isBeingDragged;
+    }
 }

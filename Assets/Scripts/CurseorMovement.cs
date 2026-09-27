@@ -54,6 +54,11 @@ public class CurseorMovement : MonoBehaviour
             return;
         }
 
+        if(currentWindow == null)
+        {
+            grabbedWindow = false;
+        }
+
         float randomX = Random.Range(.2f, .8f);
         float randomY = Random.Range(.2f, .8f);
         Vector3 worldPoint = mainCamera.ViewportToWorldPoint(new Vector3(randomX, randomY, mainCamera.nearClipPlane));
