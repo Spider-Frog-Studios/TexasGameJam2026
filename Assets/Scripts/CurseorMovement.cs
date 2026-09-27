@@ -5,7 +5,7 @@ public class CurseorMovement : MonoBehaviour
     private float smoothTime = 0.5f;
     private float speedMultiplier = 1f;
     private float currentSpeed = 3f;
-    private float speedIncreasePerSec = 0.01f;
+    private float speedIncreasePerSec = 0.1f;
     private float arrivalDistance = 0.5f;
     private Vector2 currentTargetWorld;
     private Vector2 velocity = Vector2.zero;

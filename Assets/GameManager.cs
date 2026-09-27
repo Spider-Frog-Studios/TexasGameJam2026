@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     private float gameTime = 0f;
     private int windowsCompleted;
     public static GameManager Instance;
+    [SerializeField] AudioClip errorSound;
 
     [Header("Malware")]
     [SerializeField, Min(1f)] private float malwareFillSeconds = 180f;
@@ -30,6 +31,9 @@ public class GameManager : MonoBehaviour
 
     public void AddMalware(float seconds)
     {
+        AudioSource source = GetComponent<AudioSource>();
+        if (source != null && errorSound != null)
+            source.PlayOneShot(errorSound);
         AdjustMalware(Mathf.Max(0f, seconds));
     }
 

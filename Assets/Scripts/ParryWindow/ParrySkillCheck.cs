@@ -17,7 +17,7 @@ public class ParrySkillCheck : MonoBehaviour
     private float rotationSpeed;
 
     [Tooltip("True = Clockwise, False = Counter-Clockwise")]
-    [SerializeField] private bool clockwise = true;
+    [SerializeField] private bool clockwise;
 
     [Header("Spawn Settings")]
     [Tooltip("How long the pop-in animation takes in seconds.")]
@@ -29,6 +29,14 @@ public class ParrySkillCheck : MonoBehaviour
     [Header("Malware (seconds)")]
     [SerializeField, Min(0f)] private float successRewardSeconds = 15f;
     [SerializeField, Min(0f)] private float failurePenaltySeconds = 15f;
+
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip parrySuccess;
+    [SerializeField] private AudioClip parryFailure;
+    [SerializeField] private AudioClip parryGrow;
+    [SerializeField] private AudioClip parryVoiceline;
 
     private float currentZAngle = 0f;
     private bool gameIsRunning = false;
@@ -42,6 +50,8 @@ public class ParrySkillCheck : MonoBehaviour
         cursorColliderChild = playerCursor.GetComponentInChildren<Collider2D>();
         targetColliderChild = targetZone.GetComponentInChildren<Collider2D>();
         rotationSpeed = Random.Range(minRotationSpeed, maxRotationSpeed); // Randomize rotation speed for variety
+        int randomDirection = Random.Range(0, 2); // 0 or 1
+        clockwise = randomDirection == 0;
     }
 
     void OnEnable()
@@ -103,6 +113,7 @@ public class ParrySkillCheck : MonoBehaviour
 
     private void ResolveSuccess()
     {
+        audioSource.PlayOneShot(parrySuccess);
         Debug.Log("PERFECT PARRY: Colliders overlapped successfully!");
         if (GameManager.Instance != null)
         {
@@ -114,6 +125,7 @@ public class ParrySkillCheck : MonoBehaviour
 
     private void ResolveFailure()
     {
+        audioSource.PlayOneShot(parryFailure);
         Debug.Log("FAILED: Colliders were not overlapping!");
         if (GameManager.Instance != null)
             GameManager.Instance.AddMalware(failurePenaltySeconds);
@@ -124,6 +136,7 @@ public class ParrySkillCheck : MonoBehaviour
 
     private System.Collections.IEnumerator GrowAndSpawn(GameObject targetWindow, float duration)
     {
+        audioSource.PlayOneShot(parryGrow);
         float timeElapsed = 0f;
 
         while (timeElapsed < duration)
@@ -142,6 +155,7 @@ public class ParrySkillCheck : MonoBehaviour
 
         // Only start moving the cursor needle AFTER the pop-in animation is fully complete
         gameIsRunning = true;
+        audioSource.PlayOneShot(parryVoiceline);
     }
 
     private System.Collections.IEnumerator ShrinkAndDestroy(GameObject targetWindow, float duration)

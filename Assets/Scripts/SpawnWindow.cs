@@ -4,6 +4,15 @@ public class SpawnWindow : MonoBehaviour
 {
     [SerializeField] GameObject[] windowPrefabs;
     [SerializeField] float zOffset;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] laserVoicelines;
+    [SerializeField] AudioClip[] inputVoicelines;
+    [SerializeField] AudioClip[] notepadVoicelines;
+    [SerializeField] AudioClip[] corruptedVoicelines;
+    [SerializeField] AudioClip[] paintVoicelines;
+    [SerializeField] AudioClip[] lookAtMeVoicelines;
+
+
 
     public GameObject CreateWindow(Vector3 location)
     {
@@ -11,19 +20,35 @@ public class SpawnWindow : MonoBehaviour
             return null;
 
         GameObject newWindow = null;
-        GameObject currPrefab = windowPrefabs[Random.Range(0, windowPrefabs.Length)];
+        int randomIndex = Random.Range(0, windowPrefabs.Length);
+        GameObject currPrefab = windowPrefabs[randomIndex];
+
         if (currPrefab != null)
         {
-            float randomR = Random.Range(.2f, .8f);
-            float randomG = Random.Range(.2f, .8f);
-            float randomB = Random.Range(.2f, .8f);
             newWindow = Instantiate(currPrefab, new Vector3(location.x, location.y, zOffset), transform.rotation, null);
-            SpriteRenderer renderer = newWindow.GetComponentInChildren<SpriteRenderer>();
-            if (renderer != null)
-                renderer.color = new Color(randomR, randomG, randomB, 1f);
+            PlayVoiceLine(randomIndex);
             zOffset -= 0.5f; // Decrease zOffset for the next window
         }
 
         return newWindow;
+    }
+    private void PlayVoiceLine(int prefabIndex)
+    {
+        // Matches the prefab's six voiced window types; additional types may be silent.
+        AudioClip[] clips = prefabIndex switch
+        {
+            0 => laserVoicelines,
+            1 => inputVoicelines,
+            2 => notepadVoicelines,
+            3 => corruptedVoicelines,
+            4 => paintVoicelines,
+            5 => lookAtMeVoicelines,
+            _ => null
+        };
+        if (audioSource == null || clips == null || clips.Length == 0)
+            return;
+        AudioClip clip = clips[Random.Range(0, clips.Length)];
+        if (clip != null)
+            audioSource.PlayOneShot(clip);
     }
 }
