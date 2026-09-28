@@ -353,9 +353,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2452233621900869430, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: captchaVoicelines.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2452233621900869430, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
       propertyPath: 'KojimaVoicelines.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: ca856ef194c04934b88e237aee9d5afe, type: 3}
+    - target: {fileID: 2452233621900869430, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
+      propertyPath: 'captchaVoicelines.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: eab112df9d17de04e8705bede7483031, type: 3}
     - target: {fileID: 7071786532254312407, guid: 4bf405e9a1a67d24e94a033421de558a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.87
@@ -562,6 +570,10 @@ PrefabInstance:
       value: TaskbarUI
       objectReference: {fileID: 0}
     - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1666270821}
@@ -572,10 +584,6 @@ PrefabInstance:
     - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: ChangeScene, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

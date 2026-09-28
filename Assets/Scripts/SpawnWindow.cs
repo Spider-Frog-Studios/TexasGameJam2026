@@ -13,6 +13,7 @@ public class SpawnWindow : MonoBehaviour
     [SerializeField] AudioClip[] lookAtMeVoicelines;
     [SerializeField] AudioClip[] quizVoicelines;
     [SerializeField] AudioClip[] KojimaVoicelines;
+    [SerializeField] AudioClip[] captchaVoicelines;
 
     public GameObject CreateWindow(Vector3 location)
     {
@@ -49,6 +50,7 @@ public class SpawnWindow : MonoBehaviour
             5 => lookAtMeVoicelines,
             6 => quizVoicelines,
             7 => KojimaVoicelines,
+            8 => captchaVoicelines,
             _ => null
         };
         if (audioSource == null || clips == null || clips.Length == 0)
