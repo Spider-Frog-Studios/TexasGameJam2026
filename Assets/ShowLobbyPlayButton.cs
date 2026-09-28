@@ -16,6 +16,7 @@ public class ShowLobbyPlayButton : MonoBehaviour
 
         objectToShow.SetActive(false);
         yield return new WaitForSeconds(6f);
+        GetComponent<AudioSource>().Play();
         objectToShow.SetActive(true);
         yield return new WaitForSeconds(6f);
         if (objectToHide != null)
