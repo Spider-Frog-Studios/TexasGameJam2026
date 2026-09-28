@@ -53,6 +53,7 @@ MonoBehaviour:
   - {fileID: 3576630757134862132, guid: 346e4f9abfabb0d479ef4a1d95e63c3d, type: 3}
   - {fileID: 1157294991617007622, guid: e08e85d80d67442ea962b6542329c2f4, type: 3}
   - {fileID: 3576630757134862132, guid: 985008abdd24cdc48bee5915212cb560, type: 3}
+  - {fileID: 3369001001509363553, guid: acdb9497ae8974ac19244db40dd693d5, type: 3}
   zOffset: 20
   audioSource: {fileID: 217062737492624803}
   laserVoicelines:
@@ -70,6 +71,7 @@ MonoBehaviour:
   quizVoicelines:
   - {fileID: 8300000, guid: 97745242605205e45a9123e4b319845c, type: 3}
   - {fileID: 8300000, guid: 9862e9e8bbaaa7e4398721576c3b6a08, type: 3}
+  KojimaVoicelines: []
 --- !u!1 &536863484555308824
 GameObject:
   m_ObjectHideFlags: 0

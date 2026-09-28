@@ -21,6 +21,10 @@ public class SpawnWindow : MonoBehaviour
 
         GameObject newWindow = null;
         int randomIndex = Random.Range(0, windowPrefabs.Length);
+        if (randomIndex == 7)
+        {
+            randomIndex = Random.Range(0, windowPrefabs.Length);
+        }
         GameObject currPrefab = windowPrefabs[randomIndex];
 
         if (currPrefab != null)
