@@ -564,14 +564,18 @@ PrefabInstance:
     - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1079734628}
+      objectReference: {fileID: 1666270821}
     - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: endGame
+      value: LoadScene
       objectReference: {fileID: 0}
     - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GameManager, Assembly-CSharp
+      value: ChangeScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2953754308850117791, guid: 883c6d8da5811465596bcf6a6de3b3b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

@@ -26,7 +26,6 @@ public class StartTerminalAnimationAndGame : MonoBehaviour
 
     private IEnumerator ShowTerminalAfterDelay()
     {
-        // Keep this component on an active object outside the popup hierarchy.
         objectToHide.SetActive(false);
         yield return new WaitForSeconds(2f);
 
