@@ -10,6 +10,6 @@ public class selectItemNameAbort : MonoBehaviour
         selector = GetComponentInParent<SelectItemName>();
 
         string word = selector.GetSelectedItem();
-        text.text = "\"Abort " + word + " Purchase\"";
+        text.text = "\"Cancel " + word + "\"";
     }
 }

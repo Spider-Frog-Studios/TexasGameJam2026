@@ -201,6 +201,7 @@ public class CaptchaLogic : MonoBehaviour
         {
             GameManager.Instance.SubtractMalware(15f);
             GameManager.Instance.CompleteWindow();
+            GameManager.Instance.PlayWinSound();
         }
         else
         {

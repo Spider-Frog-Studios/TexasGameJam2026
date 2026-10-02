@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int windowsCompleted;
     public static GameManager Instance;
     [SerializeField] AudioClip errorSound;
+    [SerializeField] AudioClip winSound;
 
     [Header("Malware")]
     [SerializeField, Min(1f)] private float malwareFillSeconds = 180f;
@@ -41,6 +43,12 @@ public class GameManager : MonoBehaviour
             return;
         gameTime += Time.deltaTime;
         SetMalwareSeconds(malwareSeconds + Time.deltaTime);
+        
+        if (Keyboard.current.slashKey.wasPressedThisFrame)
+        {
+            SceneManager.LoadScene("ProLobbyScene");
+        }
+
     }
 
     public void AddMalware(float seconds)
@@ -118,6 +126,14 @@ public class GameManager : MonoBehaviour
     {
         if (gameIsRunning)
             windowsCompleted++;
+    }
+
+    public void PlayWinSound()
+    {
+        //TODO add win sound!
+        AudioSource source = GetComponent<AudioSource>();
+        if (source != null && errorSound != null)
+            source.PlayOneShot(winSound);
     }
 
     public void endGame()

@@ -55,7 +55,7 @@ public class typingWindowSubmit : MonoBehaviour
     {
         if (completed)
             return;
-        string requiredMessage = "Abort " + selector.GetSelectedItem() + " Purchase";
+        string requiredMessage = "Cancel " + selector.GetSelectedItem();
 
         if (string.Equals(inputField.text, requiredMessage,
                 System.StringComparison.Ordinal))
@@ -63,14 +63,12 @@ public class typingWindowSubmit : MonoBehaviour
             if (countdown != null && !countdown.TryComplete())
                 return;
             completed = true;
-            Debug.Log("Correct!");
 
             GameManager.Instance.CompleteWindow();
             Destroy(windowRoot);
         }
         else
         {
-            Debug.Log("Incorrect. Try again!");
             if (audioSource != null && closeClip != null)
                 audioSource.PlayOneShot(closeClip);
             if (submitButton != null)

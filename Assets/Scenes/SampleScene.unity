@@ -459,6 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   errorSound: {fileID: 8300000, guid: fe7926552575d6148a0e80de50a17b5f, type: 3}
+  winSound: {fileID: 8300000, guid: 96f812bbbd63559498d9bb4f01053eff, type: 3}
   malwareFillSeconds: 180
 --- !u!82 &1079734629
 AudioSource:
