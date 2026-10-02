@@ -64,6 +64,7 @@ public class typingWindowSubmit : MonoBehaviour
                 return;
             completed = true;
 
+            GameManager.Instance.PlayWinSound();
             GameManager.Instance.CompleteWindow();
             Destroy(windowRoot);
         }
