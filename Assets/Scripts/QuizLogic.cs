@@ -10,13 +10,13 @@ public class QuizLogic : MonoBehaviour
     [SerializeField] private QuizCountdown countdown;
     [SerializeField] private GameObject winPrefab;
     [SerializeField] private GameObject losePrefab;
-    [SerializeField, Min(0f)] private float winMalwareSeconds = 15f;
+    [SerializeField, Min(0f)] private float winMalwareSeconds = 10f;
     [SerializeField, Min(0f)] private float lossMalwareSeconds = 15f;
     [SerializeField, Range(0f, 1f)] private float capitalQuestionChance = 0.5f;
 
     private static readonly string[,] Capitals =
     {
-        { "Alabama", "Montgomery" }, { "Alaska", "Juneau" },
+        { "Alabama", "Monxtgomery" }, { "Alaska", "Juneau" },
         { "Arizona", "Phoenix" }, { "Arkansas", "Little Rock" },
         { "California", "Sacramento" }, { "Colorado", "Denver" },
         { "Connecticut", "Hartford" }, { "Delaware", "Dover" },

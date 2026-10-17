@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e66f751c-333b-4618-9aa7-cc070280184f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TexasGameJam2026/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TexasGameJam2026/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AGENTS.md" beforeDir="false" afterPath="$PROJECT_DIR$/AGENTS.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CaptchaLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CaptchaLogic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Fonts/aseprite SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Fonts/aseprite SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/InputFieldMalware.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/InputFieldMalware.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ParryWindow/ParrySkillCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ParryWindow/ParrySkillCheck.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/QuizLogic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/QuizLogic.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +132,9 @@
       <workItem from="1790449601378" duration="1705000" />
       <workItem from="1790554720658" duration="1550000" />
       <workItem from="1790887175117" duration="6394000" />
+      <workItem from="1790900537992" duration="661000" />
+      <workItem from="1790902458749" duration="848000" />
+      <workItem from="1791658902415" duration="882000" />
     </task>
     <servers />
   </component>

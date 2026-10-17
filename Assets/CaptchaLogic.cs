@@ -199,7 +199,7 @@ public class CaptchaLogic : MonoBehaviour
         }
         else if (won)
         {
-            GameManager.Instance.SubtractMalware(15f);
+            GameManager.Instance.SubtractMalware(10f);
             GameManager.Instance.CompleteWindow();
             GameManager.Instance.PlayWinSound();
         }

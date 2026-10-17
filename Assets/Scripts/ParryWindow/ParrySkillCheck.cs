@@ -27,7 +27,7 @@ public class ParrySkillCheck : MonoBehaviour
     [SerializeField] private Vector3 fullScale;
 
     [Header("Malware (seconds)")]
-    [SerializeField, Min(0f)] private float successRewardSeconds = 15f;
+    [SerializeField, Min(0f)] private float successRewardSeconds = 10f;
     [SerializeField, Min(0f)] private float failurePenaltySeconds = 15f;
 
 
